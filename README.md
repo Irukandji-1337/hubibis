@@ -82,4 +82,4 @@ HUGHUB is released under the [MIT License](LICENSE).
 
 The released `hughub.exe` bundles the AutoHotkey v2 interpreter, which is licensed under the GNU GPL v2. Its source code is available at <https://github.com/AutoHotkey/AutoHotkey>.
 
-Made by [irukandji1337](https://github.com/irukandji1337).
+Made by [irukandji1337](https://github.com/irukandji-1337).
