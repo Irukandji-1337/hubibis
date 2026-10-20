@@ -1,12 +1,12 @@
 # Changelog
 
-## 1.1.0 – 2026-10-20
+## 1.0.1 – 2026-10-20
 
 - Renamed to **HUGHUB**. Settings and autostart of earlier versions are taken over automatically on first start.
 - Settings and log now live in `%AppData%\HUGHUB`.
 - Fixed umlauts in log entries coming from Windows commands.
 
-## 1.0.1 – 2026-10-18
+## 1.0.a – 2026-10-18
 
 - New: log file (`%AppData%\HUGHUB\hughub.log`), open it via the tray menu → *Open log*. Records key presses, actions, autostart setup and errors.
 - Closing the settings window now shows a hint that HUGHUB keeps running in the system tray.
