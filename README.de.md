@@ -1,0 +1,85 @@
+# HUGHUB
+
+**Inoffizielles Tool zum Umbelegen der Tasten von Hagibis-1102AG-USB-C-Hubs**, die Software, die dein Hub nie bekommen hat.
+
+HUGHUB ist ein kleines, kostenloses Windows-Tool, mit dem du die Shortcut-Tasten und den Lautstärkeknopf des Hagibis USB-C-Hubs mit Drehknopf und Shortcut-Tasten (UC-1102AG) frei belegen kannst. Ohne Code, ohne Konfigurationsdateien: Du wählst einfach aus einer Liste, was jede Taste tun soll.
+
+> **Inoffiziell.** HUGHUB ist ein Fan-Projekt und steht in keiner Verbindung zu Hagibis, wird von Hagibis weder unterstützt noch empfohlen. „Hagibis“ ist eine Marke des jeweiligen Inhabers.
+
+🇬🇧 [English version](README.md)
+
+![Einstellungsfenster](docs/screenshot.png)
+
+## Funktionen
+
+- **Drei Tasten und den Knopfdruck umbelegen**: links oben, rechts oben, rechts unten und Druck auf den Drehknopf.
+- **Einfacher und doppelter Druck**: Jede Taste kann zwei verschiedene Dinge tun. Die Zeit für den Doppeldruck ist einstellbar.
+- **Viele Aktionen**: Tastenkombination senden, Programm, Datei oder Webseite öffnen, Text einfügen, Mediensteuerung (Play/Pause, nächster/vorheriger Titel), Spotify Play/Pause, PC sperren oder die Original-Funktion behalten.
+- **Drehknopf-Modi**: Der Knopf lässt sich zwischen *Lautstärke* und einem zweiten Modus umschalten: in Videos spulen (YouTube & Co.), Titel wechseln oder scrollen. Im zweiten Modus kann ein Druck auf den Knopf das Video anhalten und fortsetzen.
+- **Startet auf Wunsch mit Windows** und läuft unauffällig im Infobereich der Taskleiste.
+- **Deutsch und Englisch**, automatisch passend zur Windows-Sprache.
+
+Die Taste links unten (Beleuchtung) wird im Hub selbst verarbeitet und kommt nie beim PC an. Sie lässt sich deshalb nicht umbelegen.
+
+## Download & Installation
+
+1. `hughub.exe` aus der [neuesten Version](../../releases/latest) herunterladen.
+2. In einen festen Ordner legen, zum Beispiel `Dokumente\HUGHUB`. Der Autostart merkt sich diesen Ort.
+3. Doppelklick. Das Einstellungsfenster öffnet sich, danach läuft das Tool im Infobereich der Taskleiste. Ein Klick auf das Symbol öffnet die Einstellungen wieder.
+
+**„Der Computer wurde durch Windows geschützt“?** Die exe ist nicht digital signiert, deshalb warnt SmartScreen. Klick auf *Weitere Informationen* → *Trotzdem ausführen*. Manche Virenscanner melden AutoHotkey-Tools außerdem, weil sie Tastendrücke abfangen. Das ist ein bekannter Fehlalarm. Wer keiner fertigen exe vertrauen möchte, startet das Skript direkt aus dem Quelltext (siehe unten).
+
+## Die Taste links oben (Win+L)
+
+Die Taste links oben sendet **Win+L**, und das verarbeitet Windows selbst, um den PC zu sperren. Um sie umzubelegen, muss HUGHUB die Win+L-Sperre über die Registry abschalten, und das erlaubt Windows nur mit **Administratorrechten**. Wenn du diese Taste umbelegst, bietet das Tool an, sich mit Administratorrechten neu zu starten. Ist „Mit Windows automatisch starten“ aktiv, trägt es sich in die Aufgabenplanung ein und startet bei jeder Anmeldung mit diesen Rechten, ohne jedes Mal nachzufragen.
+
+Gut zu wissen:
+
+- Für Windows sind die Hub-Taste und Win+L auf deiner Tastatur identisch. Die Umbelegung gilt deshalb für beide. Mit der Aktion *PC sperren* (zum Beispiel auf einem Doppeldruck) kannst du trotzdem sperren.
+- Beendest du HUGHUB normal, wird Win+L wieder freigegeben. Wird das Tool hart beendet (etwa über den Task-Manager), bleibt Win+L abgeschaltet, bis HUGHUB wieder gestartet und normal beendet wird.
+- Programme und Webseiten, die das Tool öffnet, laufen trotzdem mit normalen Benutzerrechten.
+
+## Kompatibilität
+
+Getestet mit dem **Hagibis UC-1102AG** unter **Windows 11**. Andere Hagibis-Modelle mit Shortcut-Tasten senden eventuell andere Signale. Wenn deins nicht funktioniert, eröffne bitte ein [Issue](../../issues) und gib an, was deine Tasten senden (siehe *Herausfinden, was deine Tasten senden* unten).
+
+## Etwas funktioniert nicht?
+
+HUGHUB schreibt ein Log: Rechtsklick auf das Taskleistensymbol → *Log öffnen* (oder `%AppData%\HUGHUB\hughub.log` öffnen). Darin stehen jeder Start, jeder Tastendruck mit der ausgelösten Aktion, das Einrichten des Autostarts und alle Fehler. Bitte häng es an, wenn du ein [Issue](../../issues) eröffnest.
+
+Du findest das Taskleistensymbol nicht? Windows 11 versteckt neue Symbole hinter dem Pfeil ^. Dauerhaft sichtbar wird es unter *Einstellungen → Personalisierung → Taskleiste → Andere Taskleistensymbole*, dort HUGHUB einschalten.
+
+## Deinstallieren
+
+1. Einstellungen öffnen, *Mit Windows automatisch starten* abhaken, die Taste links oben wieder auf *Original-Funktion* stellen und *Speichern* klicken.
+2. HUGHUB über das Taskleistensymbol beenden (Rechtsklick → *Beenden*).
+3. `hughub.exe` und den Ordner `%AppData%\HUGHUB` löschen.
+
+## Aus dem Quelltext starten
+
+1. [AutoHotkey v2](https://www.autohotkey.com/) installieren.
+2. `src/hughub.ahk` und `src/hughub.ico` in denselben Ordner herunterladen.
+3. Doppelklick auf `hughub.ahk`.
+
+Um die exe selbst zu bauen: Rechtsklick auf `hughub.ahk` → *Compile Script* (Ahk2Exe, als Basis v2 64-bit wählen). Name, Version und Symbol stehen in den Anweisungen am Anfang des Skripts.
+
+## Herausfinden, was deine Tasten senden
+
+Speichere das als `test.ahk`, starte es, drück deine Hub-Tasten, klick dann ins Fenster und drück F5:
+
+```autohotkey
+#Requires AutoHotkey v2.0
+InstallKeybdHook
+KeyHistory
+Persistent
+```
+
+Der UC-1102AG sendet: links oben `Win+L`, rechts oben `Media_Play_Pause`, rechts unten `Win+PrintScreen`, Knopfdruck `Volume_Mute`, Drehen `Volume_Up` / `Volume_Down`.
+
+## Lizenz
+
+HUGHUB steht unter der [MIT-Lizenz](LICENSE).
+
+Die veröffentlichte `hughub.exe` enthält den AutoHotkey-v2-Interpreter, der unter der GNU GPL v2 steht. Dessen Quelltext gibt es unter <https://github.com/AutoHotkey/AutoHotkey>.
+
+Gemacht von [irukandji1337](https://github.com/irukandji1337).
