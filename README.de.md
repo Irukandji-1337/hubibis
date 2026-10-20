@@ -1,5 +1,13 @@
 # HUGHUB
 
+Die Software, die dein Hagibis UC-1102AG nie bekommen hat: Shortcut-Tasten und Drehknopf frei belegen, mit Einfach- und Doppeldruck, Drehknopf-Modi zum Spulen in Videos und vielem mehr.
+
+Download: hughub.exe unten, keine Installation nötig. In einen festen Ordner legen und doppelklicken.
+
+⚠️ Die exe ist nicht digital signiert. Warnt Windows SmartScreen, auf Weitere Informationen → Trotzdem ausführen klicken. Blockiert die intelligente App-Steuerung sie, findest du die Lösungen in der README.
+
+ℹ️ Inoffizielles Fan-Projekt, nicht mit Hagibis verbunden:
+
 \* Ja, noch ein Vibe-Coding-Projekt mehr auf GitHub. Aber vielleicht spart es jemandem Zeit und Token (Wasser & Energie), wenn er mein Tool nutzt, anstatt es neu zu coden.
 
 \*\* Das Tool wurde unter Verwendung und Anleitung von Claude erstellt.
