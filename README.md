@@ -6,7 +6,7 @@ Download: hughub.exe below – no installation needed. Put it in a permanent fol
 
 ⚠️ The exe is not code-signed. If Windows SmartScreen warns you, click More info → Run anyway. If Smart App Control blocks it, see the README for your options.
 
-ℹ️ Unofficial fan project, not affiliated with Hagibis. Created with the help of Claude.
+ℹ️ Unofficial fan project, not affiliated with Hagibis:
 
 \* Yes, yet another vibe-coding project on GitHub. But maybe it saves someone time and tokens (water & energy) to use my tool instead of coding it all over again.
 
