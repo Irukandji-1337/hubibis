@@ -20,7 +20,7 @@ Download: hughub.exe below – no installation needed. Put it in a permanent fol
 
 🇩🇪 [Deutsche Anleitung](README.de.md)
 
-![Settings window](docs/screenshot.png)
+![Settings window](docs/screenshot_eng.png)
 
 ## Features
 
