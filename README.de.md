@@ -1,8 +1,12 @@
 # HUGHUB
 
+\* Ja, noch ein Vibe-Coding-Projekt mehr auf GitHub. Aber vielleicht spart es jemandem Zeit und Token (Wasser & Energie), wenn er mein Tool nutzt, anstatt es neu zu coden.
+
+\*\* Das Tool wurde unter Verwendung und Anleitung von Claude erstellt.
+
 **Inoffizielles Tool zum Umbelegen der Tasten von Hagibis-1102AG-USB-C-Hubs**, die Software, die dein Hub nie bekommen hat.
 
-HUGHUB ist ein kleines, kostenloses Windows-Tool, mit dem du die Shortcut-Tasten und den Lautstärkeknopf des Hagibis USB-C-Hubs mit Drehknopf und Shortcut-Tasten (UC-1102AG) frei belegen kannst. Ohne Code, ohne Konfigurationsdateien: Du wählst einfach aus einer Liste, was jede Taste tun soll.
+**HUGHUB** ist ein kleines, kostenloses Windows-Tool, mit dem ihr die Shortcut-Tasten und den Lautstärkeknopf des Hagibis USB-C-Hubs mit Drehknopf und Shortcut-Tasten (UC-1102AG) frei belegen könnt. Ohne Code, ohne Konfigurationsdateien: Du wählst einfach aus einer Liste, was jede Taste tun soll.
 
 > **Inoffiziell.** HUGHUB ist ein Fan-Projekt und steht in keiner Verbindung zu Hagibis, wird von Hagibis weder unterstützt noch empfohlen. „Hagibis“ ist eine Marke des jeweiligen Inhabers.
 
@@ -27,7 +31,16 @@ Die Taste links unten (Beleuchtung) wird im Hub selbst verarbeitet und kommt nie
 2. In einen festen Ordner legen, zum Beispiel `Dokumente\HUGHUB`. Der Autostart merkt sich diesen Ort.
 3. Doppelklick. Das Einstellungsfenster öffnet sich, danach läuft das Tool im Infobereich der Taskleiste. Ein Klick auf das Symbol öffnet die Einstellungen wieder.
 
-**„Der Computer wurde durch Windows geschützt“?** Die exe ist nicht digital signiert, deshalb warnt SmartScreen. Klick auf *Weitere Informationen* → *Trotzdem ausführen*. Manche Virenscanner melden AutoHotkey-Tools außerdem, weil sie Tastendrücke abfangen. Das ist ein bekannter Fehlalarm. Wer keiner fertigen exe vertrauen möchte, startet das Skript direkt aus dem Quelltext (siehe unten).
+### Windows-Sicherheitswarnungen
+
+`hughub.exe` ist nicht digital signiert (ein Signaturzertifikat kostet Geld), deshalb behandelt Windows sie als unbekannte App. Je nach Einstellung erscheint eine dieser Meldungen:
+
+- **SmartScreen: „Der Computer wurde durch Windows geschützt“**: Auf *Weitere Informationen* → *Trotzdem ausführen* klicken. Das ist nur einmal nötig.
+- **Intelligente App-Steuerung (Smart App Control): „Ein Teil dieser App wurde blockiert“**: Die intelligente App-Steuerung blockiert unsignierte Apps komplett, ohne *Trotzdem ausführen*. Du hast zwei Möglichkeiten:
+  - **HUGHUB aus dem Quelltext starten** (siehe *Aus dem Quelltext starten* unten). AutoHotkey selbst ist signiert, deshalb klappt das in der Regel auch bei eingeschalteter App-Steuerung.
+  - **Die intelligente App-Steuerung ausschalten**: *Windows-Sicherheit → App- und Browsersteuerung → Einstellungen für die intelligente App-Steuerung → Aus*. Seit dem Windows-Update vom April 2026 lässt sie sich dort jederzeit wieder einschalten. Bei älteren Windows-Versionen geht das Wiedereinschalten nur durch Zurücksetzen von Windows. Dann lieber den Quelltext-Weg nehmen.
+
+Manche Virenscanner melden AutoHotkey-Tools außerdem, weil sie Tastendrücke abfangen. Das ist ein bekannter Fehlalarm, der komplette Quelltext liegt in diesem Repository.
 
 ## Die Taste links oben (Win+L)
 
@@ -82,4 +95,4 @@ HUGHUB steht unter der [MIT-Lizenz](LICENSE).
 
 Die veröffentlichte `hughub.exe` enthält den AutoHotkey-v2-Interpreter, der unter der GNU GPL v2 steht. Dessen Quelltext gibt es unter <https://github.com/AutoHotkey/AutoHotkey>.
 
-Gemacht von [irukandji1337](https://github.com/irukandji1337).
+Gemacht von [Irukandji-1337](https://github.com/Irukandji-1337).

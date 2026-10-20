@@ -1,0 +1,2 @@
+# compiled builds are attached to GitHub releases, not committed
+*.exe

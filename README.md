@@ -1,8 +1,12 @@
 # HUGHUB
 
-**Unofficial key remapper for Hagibis 1102AG USB-C hubs** – give your hub the software it never shipped with.
+\* Yes, yet another vibe-coding project on GitHub. But maybe it saves someone time and tokens (water & energy) to use my tool instead of coding it all over again.
 
-HUGHUB is a small, free Windows tool that lets you remap the shortcut keys and the volume knob of the Hagibis USB-C hub with knob and shortcut buttons (UC-1102AG). No code, no config files – just pick what each key should do from a list.
+\*\* This tool was created with the help and guidance of Claude.
+
+**Unofficial key remapper for Hagibis 1102AG USB-C hubs** – the software your hub never shipped with.
+
+**HUGHUB** is a small, free Windows tool that lets you remap the shortcut keys and the volume knob of the Hagibis USB-C hub with knob and shortcut buttons (UC-1102AG). No code, no config files – just pick what each key should do from a list.
 
 > **Unofficial.** HUGHUB is a fan project and is not affiliated with, endorsed by or supported by Hagibis. “Hagibis” is a trademark of its owner.
 
@@ -27,7 +31,16 @@ The bottom-left key (lighting) is handled inside the hub itself and never reache
 2. Put it in a permanent folder, e.g. `Documents\HUGHUB` (autostart remembers this location).
 3. Double-click it. The settings window opens; afterwards the tool lives in the system tray – click the icon to reopen the settings.
 
-**“Windows protected your PC”?** The exe is not code-signed, so SmartScreen warns about it. Click *More info* → *Run anyway*. Some antivirus programs also flag AutoHotkey-based tools because they intercept key presses – that is a known false positive. If you'd rather not trust a binary, run the script from source (see below).
+### Windows security warnings
+
+`hughub.exe` is not code-signed (a signing certificate costs money), so Windows treats it as an unknown app. Depending on your settings you will see one of these:
+
+- **SmartScreen: “Windows protected your PC”** – click *More info* → *Run anyway*. You only need to do this once.
+- **Smart App Control: “Part of this app has been blocked”** – Smart App Control blocks unsigned apps completely, without a *Run anyway* button. You have two options:
+  - **Run HUGHUB from source** (see *Run from source* below). AutoHotkey itself is signed, so this usually works with Smart App Control switched on.
+  - **Switch Smart App Control off**: *Windows Security → App & browser control → Smart App Control settings → Off*. Since the April 2026 Windows update you can switch it back on there at any time. On older Windows versions, turning it back on requires resetting Windows – in that case, prefer running from source.
+
+Some antivirus programs also flag AutoHotkey-based tools because they intercept key presses. That is a known false positive; the full source code is in this repository.
 
 ## The top-left key (Win+L)
 
@@ -82,4 +95,4 @@ HUGHUB is released under the [MIT License](LICENSE).
 
 The released `hughub.exe` bundles the AutoHotkey v2 interpreter, which is licensed under the GNU GPL v2. Its source code is available at <https://github.com/AutoHotkey/AutoHotkey>.
 
-Made by [irukandji1337](https://github.com/irukandji-1337).
+Made by [Irukandji-1337](https://github.com/Irukandji-1337).
