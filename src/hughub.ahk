@@ -5,21 +5,21 @@ Persistent
 ; Angaben für die .exe (werden von Ahk2Exe beim Kompilieren gelesen)
 ;@Ahk2Exe-SetName HUGHUB
 ;@Ahk2Exe-SetDescription HUGHUB - unofficial key remapper for Hagibis 1102AG USB-C hubs
-;@Ahk2Exe-SetVersion 1.1.0
-;@Ahk2Exe-SetCopyright (c) 2026 irukandji1337 - MIT License
+;@Ahk2Exe-SetVersion 1.0.1
+;@Ahk2Exe-SetCopyright (c) 2026 Irukandji-1337 - MIT License
 ;@Ahk2Exe-SetMainIcon hughub.ico
 
 ; ==================================================================
 ;  HUGHUB
 ;  Inoffizielles Tool zum Umbelegen der Tasten des Hagibis UC-1102AG.
-;  Nicht mit Hagibis verbunden. https://github.com/irukandji1337/hughub
+;  Nicht mit Hagibis verbunden. https://github.com/Irukandji-1337/hughub
 ;  Bedienung: Klick auf das Symbol unten rechts in der Taskleiste.
 ;  Die Einstellungen liegen in %AppData%\HUGHUB.
 ; ==================================================================
 
 global APP_NAME := "HUGHUB"   ; Name für Ordner und Autostart
 global OLD_APP_NAMES := ["HUG-1102AG-KeyChanger", "HUGibis", "Hagibis Hub-Tasten"]   ; Namen früherer Versionen
-global APP_VERSION := "1.1.0"
+global APP_VERSION := "1.0.1"
 
 ; ---------- Log ----------
 ; Schreibt nach %AppData%\HUGHUB\hughub.log (ab 500 KB wird rotiert)
@@ -752,7 +752,7 @@ BuildSettings() {
     cancelBtn.OnEvent("Click", CloseByUser)
 
     g.SetFont("s9 cGray")
-    g.AddLink("x15 y+15 w490", APP_TITLE " " APP_VERSION " · " T("about") ' <a href="https://github.com/irukandji1337/hughub">GitHub</a>')
+    g.AddLink("x15 y+15 w490", APP_TITLE " " APP_VERSION " · " T("about") ' <a href="https://github.com/Irukandji-1337/hughub">GitHub</a>')
 
     SettingsGui := g
     g.Show()
